@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewControllers.ProductsController">
+   <children>
+      <HBox layoutY="6.0" prefHeight="592.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="592.0" prefWidth="290.0">
+               <children>
+                  <Label fx:id="label" text="Add Product">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <HBox prefHeight="180.0" prefWidth="259.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="ID">
+                                 <VBox.margin>
+                                    <Insets bottom="11.0" left="11.0" right="11.0" top="19.0" />
+                                 </VBox.margin>
+                                 <HBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </HBox.margin></Label>
+                              <Label text="Name">
+                                 <VBox.margin>
+                                    <Insets bottom="11.0" left="11.0" right="11.0" top="11.0" />
+                                 </VBox.margin></Label>
+                              <Label text="Inv">
+                                 <VBox.margin>
+                                    <Insets bottom="11.0" left="11.0" right="11.0" top="11.0" />
+                                 </VBox.margin></Label>
+                              <Label text="Price">
+                                 <VBox.margin>
+                                    <Insets bottom="11.0" left="11.0" right="11.0" top="11.0" />
+                                 </VBox.margin></Label>
+                              <Label text="Max">
+                                 <VBox.margin>
+                                    <Insets bottom="11.0" left="11.0" right="11.0" top="11.0" />
+                                 </VBox.margin></Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="100.0" prefWidth="158.0">
+                           <children>
+                              <TextField fx:id="id">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="name">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="stock">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="price">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </VBox.margin></TextField>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="max" prefHeight="26.0" prefWidth="43.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin></TextField>
+                                    <Label text="Min">
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" top="5.0" />
+                                       </padding></Label>
+                                    <TextField fx:id="min" prefHeight="26.0" prefWidth="46.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </HBox.margin>
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="592.0" prefWidth="538.0">
+               <children>
+                  <HBox prefHeight="51.0" prefWidth="341.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#searchPartAction" text="Search">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                        <TextField fx:id="partSearchField">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="foundParts" prefHeight="162.0" prefWidth="504.0">
+                    <columns>
+                      <TableColumn fx:id="foundId" prefWidth="125.0" text="Part ID" />
+                      <TableColumn fx:id="foundName" prefWidth="125.0" text="Part Name" />
+                        <TableColumn fx:id="foundStock" prefWidth="125.0" text="Inventory" />
+                        <TableColumn fx:id="foundPrice" prefWidth="125.0" text="Cost per Unit" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#addPartAction" text="Add">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Button>
+                  <TableView fx:id="includedParts" prefHeight="155.0" prefWidth="504.0">
+                    <columns>
+                      <TableColumn fx:id="includedId" prefWidth="125.0" text="Part ID" />
+                      <TableColumn fx:id="includedName" prefWidth="125.0" text="Part Name" />
+                        <TableColumn fx:id="includedStock" prefWidth="125.0" text="Inventory" />
+                        <TableColumn fx:id="includedPrice" prefWidth="125.0" text="Cost per Unit" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#deletePartAction" text="Delete">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Button>
+                  <HBox prefHeight="88.0" prefWidth="524.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#saveAction" text="Save">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                        <Button mnemonicParsing="false" onAction="#cancelAction" text="Cancel">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
